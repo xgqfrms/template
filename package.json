@@ -5,6 +5,7 @@
   "author": "xgqfrms",
   "license": "MIT",
   "main": "src/index.js",
+  "main-ts": "src/index.ts",
   "keywords": [
     "js",
     "node.js",
@@ -12,7 +13,16 @@
     "fullstack"
   ],
   "scripts": {
+    "dev": "yarn rmrf && tsc",
+    "build": "yarn rmrf && tsc",
+    "rmrf-map": "rimraf build/**/*.map",
+    "rmrf": "rimraf build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "dev": "./scripts/dev.sh",
+    "app": "./scripts/app.sh",
+    "deploy": "./scripts/deploy.sh"
   },
   "files": [
     "build/index.min.js",
